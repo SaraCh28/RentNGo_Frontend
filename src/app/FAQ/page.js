@@ -63,7 +63,7 @@ const FAQ = () => {
 
   return (
 
-    <div className="min-h-screen mx-auto    w-full bg-black pb-2 mt-[-20] relative overflow-hidden" id="FAQ">
+    <div className="min-h-screen mx-auto    w-full bg-black pb-2 mt-[-10] relative overflow-hidden" id="FAQ">
             <Aurora className="absolute inset-0 z-10 min-h-screen w-full"
   colorStops={["#6438c2", "#8b78c9", "#bfa1e2", "#616161", "#6438c2"]}
   blend={0.5}
@@ -72,7 +72,7 @@ const FAQ = () => {
 />
       <MyNavbar />
       <div className="container mx-auto px-4">
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-3xl mt-[-30px] mx-auto">
           <div className="text-center mx-auto  mb-12">
             <h1 className="text-4xl   mx-auto font-bold mb-4">Frequently Asked Questions</h1>
             <p className="text-white text-lg">

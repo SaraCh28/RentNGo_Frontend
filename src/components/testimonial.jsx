@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
+import DarkVeil from "./DarkVeil";
 
 export default function Testimonials() {
   const accent = "#6438c2"; 
@@ -39,12 +40,18 @@ const testimonials = [
 
 
   return (
-    <section className="p-5 min-h-screen my-0 py-5  ">
+    <section className="relative min-h-screen my-0 py-10 sm:py-12 px-4 sm:px-6 lg:px-16 overflow-hidden bg-black">
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <DarkVeil />
+        <div className="absolute inset-0 bg-black/70" />
+      </div>
+
+      <div className="relative z-10">
       {/* Divider */}
       <div className="my-12 border-t border-[#6438c2]" />
 
       {/* Trust + Testimonials + CTA */}
-      <div className="grid grid-cols-1 gap-10 items-start">
+      <div className="grid gap-10 items-start">
         {/* Left Section: Rating + Testimonials */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}
@@ -53,24 +60,24 @@ const testimonials = [
           className="space-y-4"
         >
           {/* Rating */}
-          <div className="flex justify-center items-center w-[100vw] mb-4">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 mb-6">
             <div
-              className="rounded-full w-17 h-17 flex items-center mx-4 justify-center bg-[rgba(100,56,194,0.12)]"
+              className="rounded-full w-16 h-16 flex items-center justify-center mx-auto sm:mx-0 bg-[rgba(100,56,194,0.12)]"
               style={{ border: `2px solid ${accent}33` }}
             >
               <span
-                className="text-3xl font-semibold"
+                className="text-2xl sm:text-3xl font-semibold"
                 style={{ color: accent }}
               >
                 4.8
               </span>
             </div>
 
-            <div>
-              <p className="text-gray-300 text-3xl px-2">
+            <div className="text-center sm:text-left">
+              <p className="text-gray-300 text-lg sm:text-2xl lg:text-3xl">
                 Average rating on major platforms
               </p>
-              <p className="text-white font-medium text-xl px-2">
+              <p className="text-white font-medium text-base sm:text-lg lg:text-xl mt-1">
                 10,000+ rides • 2,500+ happy clients
               </p>
             </div>
@@ -78,14 +85,14 @@ const testimonials = [
 
           {/* Testimonial Cards */}
           {/* Testimonial Cards */}
-<div className="grid grid-cols-2 gap-3">
+<div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
   {testimonials.map((testimonial) => (
     <div
       key={testimonial.id}
-      className="bg-[rgba(255,255,255,0.02)] p-6 rounded-2xl border border-white"
+      className="bg-[rgba(255,255,255,0.02)] p-5 sm:p-6 rounded-2xl border border-white"
     >
-      <p className="italic text-gray-300">“{testimonial.text}”</p>
-      <p className="mt-3 text-[#6438c2] font-medium">
+      <p className="italic text-gray-300 text-sm sm:text-base">“{testimonial.text}”</p>
+      <p className="mt-3 text-[#6438c2] font-medium text-sm sm:text-base">
         — {testimonial.name}, {testimonial.role}
       </p>
     </div>
@@ -130,34 +137,45 @@ const testimonials = [
       </div>
 
       {/* Final CTA Banner */}
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0, y: 8 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="mt-16 bg-white/5 p-8 rounded-3xl flex flex-col sm:flex-row items-center justify-between gap-6 border border-white/6"
+        className="mt-12 sm:mt-16 bg-white/5 p-6 sm:p-8 rounded-3xl flex flex-col sm:flex-row items-center justify-between gap-6 border border-white/6 text-center sm:text-left"
       >
         <div>
-          <h4 className="text-xl font-semibold">
+          <h4 className="text-lg sm:text-xl font-semibold">
             Ready to experience premium rides?
           </h4>
-          <p className="text-gray-300 mt-1">
+          <p className="text-gray-300 mt-1 text-sm sm:text-base">
             Secure your vehicle with a few clicks — luxury, comfort and safety
             included.
           </p>
         </div>
 
-        <div className="flex gap-4">
+        <div className="flex w-full sm:w-auto justify-center sm:justify-start">
           <motion.button
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.98 }}
-            className="px-6 py-3 rounded-full bg-[#6438c2] hover:bg-[#451e98] border-[#451e98] border-2 text-white font-medium shadow-lg"
+            className="px-6 py-3 rounded-full bg-[#6438c2] hover:bg-[#451e98] border-[#451e98] border-2 text-white font-medium shadow-lg w-full sm:w-auto"
           >
             Book Now
           </motion.button>
 
          
         </div>
-      </motion.div>
+      </motion.div> */}
+      </div>
     </section>
   );
 }
+
+
+
+
+
+
+
+
+
+

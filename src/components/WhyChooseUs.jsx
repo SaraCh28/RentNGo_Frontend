@@ -48,8 +48,8 @@ const alwaysinView = useTransform(scrollYProgress, [0, 1], [1, 1]);
 const fadeIn = useTransform(smoothProgress, [0, 1], [0.4, 1]);
 const slideUp = useTransform(scrollYProgress, [0, 1], [0,1]);
 const scaleUp = useTransform(scrollYProgress, [0, 1], [0.85, 1]);
-const SlidersHorizontalR = useTransform(scrollYProgress, [0, 1], [50, 0]);
-const SlidersHorizontalL = useTransform(scrollYProgress, [0, 1], [ -50, 0]);
+const SlidersHorizontalR = useTransform(scrollYProgress, [0, 1], [30, 0]);
+const SlidersHorizontalL = useTransform(scrollYProgress, [0, 1], [ -30, 0]);
 
 
 
@@ -58,7 +58,7 @@ const SlidersHorizontalL = useTransform(scrollYProgress, [0, 1], [ -50, 0]);
   return (
     <section
     id="whyChooseUs"
-     className="w-full min-h-screen bg-black text-white py-16 px-6 lg:px-24"
+     className="w-full min-h-screen bg-black text-white py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-24"
      ref={ref}
  
 >
@@ -68,27 +68,27 @@ const SlidersHorizontalL = useTransform(scrollYProgress, [0, 1], [ -50, 0]);
       y: slideUp,
       scale: scaleUp
     }}
-    transition={{ duration: 0.8, ease: "easeOut" }}
+    transition={{ duration: 0.4, ease: "easeOut" }}
   >
       {/* Header */}
       <div className="max-w-6xl mx-auto">
         <motion.header
-          initial={{ opacity: 0, y: 8 , x:50}}
+          initial={{ opacity: 0, y: 3 , x:10}}
           animate={{ opacity: 1, y: 0 , x:0}}
           transition={{ duration: 0.8, ease: 'easeOut' }}
-          className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6"
+          className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 text-center lg:text-left"
         >
           <div>
-            <h2 className="text-4xl lg:text-5xl font-semibold tracking-tight leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight leading-tight">
               Why <span style={{ color: 'white' }}>Choose</span> <span className="text-white">RentN<span className="text-[#6438c2]">Go</span></span>
             </h2>
-            <p className="mt-3 text-gray-300 max-w-xl">
+            <p className="mt-3 text-gray-300 max-w-xl mx-auto lg:mx-0 text-sm sm:text-base">
               Premium vehicles, seamless bookings, and concierge-grade support — designed for travelers
               who value comfort and reliability.
             </p>
           </div>
 
-          <div className="mt-4 lg:mt-0">
+          <div className="mt-4 lg:mt-0 w-full sm:w-auto flex justify-center lg:justify-end">
            <Button action="Book Now" />
           </div>
         </motion.header>
@@ -105,7 +105,7 @@ const SlidersHorizontalL = useTransform(scrollYProgress, [0, 1], [ -50, 0]);
         >
          <motion.div 
          
-         className="grid grid-cols-3 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12"
+         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mt-10 sm:mt-12 sm:py-3"
     style={{
       opacity: alwaysinView,
       y: slideUp,
@@ -114,45 +114,45 @@ const SlidersHorizontalL = useTransform(scrollYProgress, [0, 1], [ -50, 0]);
     }}
     transition={{ duration: 1.9, ease: "easeOut" }}
   >
-          <motion.article variants={card} whileHover={{ scale: 1.03, boxShadow: '0 0 24px rgba(100,56,194,0.18)' }} className="bg-[rgba(255,255,255,0.03)] p-6 rounded-2xl backdrop-blur-sm border border-white/30 transition-all duration-300">
-            <div className="flex items-center gap-4">
+          <motion.article variants={card} whileHover={{ scale: 1.03, boxShadow: '0 0 24px rgba(100,56,194,0.18)' }} className="bg-[rgba(255,255,255,0.03)] p-5 sm:p-6 rounded-2xl backdrop-blur-sm border border-white/30 transition-all duration-300">
+            <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 text-center sm:text-left">
               <div className="p-3 rounded-lg bg-[rgba(100,56,194,0.12)]">
                 <FiTruck size={22} style={{ color: accent }} />
               </div>
               <div>
                 <h3 className="text-lg font-semibold">Wide Premium Fleet</h3>
-                <p className="text-gray-300 text-sm mt-1">From luxury sedans to family SUVs — handpicked and fully inspected.</p>
+                <p className="text-gray-300 text-sm sm:text-base mt-1">From luxury sedans to family SUVs — handpicked and fully inspected.</p>
               </div>
             </div>
           </motion.article>
 
-          <motion.article variants={card} whileHover={{ scale: 1.03, boxShadow: '0 0 24px rgba(100,56,194,0.18)' }} className="bg-[rgba(255,255,255,0.03)] p-6 rounded-2xl backdrop-blur-sm border border-white/30 transition-all duration-300">
-            <div className="flex items-center gap-4">
+          <motion.article variants={card} whileHover={{ scale: 1.03, boxShadow: '0 0 24px rgba(100,56,194,0.18)' }} className="bg-[rgba(255,255,255,0.03)] p-5 sm:p-6 rounded-2xl backdrop-blur-sm border border-white/30 transition-all duration-300">
+            <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 text-center sm:text-left">
               <div className="p-3 rounded-lg bg-[rgba(100,56,194,0.12)]">
                 <FiShield size={22} style={{ color: accent }} />
               </div>
               <div>
                 <h3 className="text-lg font-semibold">Insurance & Safety</h3>
-                <p className="text-gray-300 text-sm mt-1">Comprehensive coverage and 24/7 roadside assistance for peace of mind.</p>
+                <p className="text-gray-300 text-sm sm:text-base mt-1">Comprehensive coverage and 24/7 roadside assistance for peace of mind.</p>
               </div>
             </div>
           </motion.article>
 
-          <motion.article variants={card} whileHover={{ scale: 1.03, boxShadow: '0 0 24px rgba(100,56,194,0.18)' }} className="bg-[rgba(255,255,255,0.03)] p-6 rounded-2xl backdrop-blur-sm border border-white/30 transition-all duration-300">
-            <div className="flex items-center gap-4">
+          <motion.article variants={card} whileHover={{ scale: 1.03, boxShadow: '0 0 24px rgba(100,56,194,0.18)' }} className="bg-[rgba(255,255,255,0.03)] p-5 sm:p-6 rounded-2xl backdrop-blur-sm border border-white/30 transition-all duration-300">
+            <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 text-center sm:text-left">
               <div className="p-3 rounded-lg bg-[rgba(100,56,194,0.12)]">
                 <FiStar size={22} style={{ color: accent }} />
               </div>
               <div>
                 <h3 className="text-lg font-semibold">Trusted Reviews</h3>
-                <p className="text-gray-300 text-sm mt-1">Thousands of 5-star reviews from business and leisure customers.</p>
+                <p className="text-gray-300 text-sm sm:text-base mt-1">Thousands of 5-star reviews from business and leisure customers.</p>
               </div>
             </div>
           </motion.article>
         </motion.div>
 
         <motion.div 
-                 className="grid grid-cols-3 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8"
+                 className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mt-6 sm:mt-8"
 
     style={{
       opacity: alwaysinView,
@@ -163,38 +163,38 @@ const SlidersHorizontalL = useTransform(scrollYProgress, [0, 1], [ -50, 0]);
     transition={{ duration: 1.9, ease: "easeOut" }}
   >
 
-          <motion.article variants={card} whileHover={{ scale: 1.03, boxShadow: '0 0 24px rgba(100,56,194,0.18)' }} className="bg-[rgba(255,255,255,0.03)] p-6 rounded-2xl backdrop-blur-sm border border-white/30 transition-all duration-300">
-            <div className="flex items-center gap-4">
+          <motion.article variants={card} whileHover={{ scale: 1.03, boxShadow: '0 0 24px rgba(100,56,194,0.18)' }} className="bg-[rgba(255,255,255,0.03)] p-5 sm:p-6 rounded-2xl backdrop-blur-sm border border-white/30 transition-all duration-300">
+            <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 text-center sm:text-left">
               <div className="p-3 rounded-lg bg-[rgba(100,56,194,0.12)]">
                 <FiZap size={22} style={{ color: accent }} />
               </div>
               <div>
                 <h3 className="text-lg font-semibold">Fast Concierge Booking</h3>
-                <p className="text-gray-300 text-sm mt-1">Concierge support to help plan fleets, events or corporate bookings.</p>
+                <p className="text-gray-300 text-sm sm:text-base mt-1">Concierge support to help plan fleets, events or corporate bookings.</p>
               </div>
             </div>
           </motion.article>
 
-          <motion.article variants={card} whileHover={{ scale: 1.03, boxShadow: '0 0 24px rgba(100,56,194,0.18)' }} className="bg-[rgba(255,255,255,0.03)] p-6 rounded-2xl backdrop-blur-sm border border-white/30 transition-all duration-300">
-            <div className="flex items-center gap-4">
+          <motion.article variants={card} whileHover={{ scale: 1.03, boxShadow: '0 0 24px rgba(100,56,194,0.18)' }} className="bg-[rgba(255,255,255,0.03)] p-5 sm:p-6 rounded-2xl backdrop-blur-sm border border-white/30 transition-all duration-300">
+            <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 text-center sm:text-left">
               <div className="p-3 rounded-lg bg-[rgba(100,56,194,0.12)]">
                 <FiMapPin size={22} style={{ color: accent }} />
               </div>
               <div>
                 <h3 className="text-lg font-semibold">Nationwide Network</h3>
-                <p className="text-gray-300 text-sm mt-1">Pick-up or drop-off at major cities — flexible locations for your convenience.</p>
+                <p className="text-gray-300 text-sm sm:text-base mt-1">Pick-up or drop-off at major cities — flexible locations for your convenience.</p>
               </div>
             </div>
           </motion.article>
 
-          <motion.article variants={card} whileHover={{ scale: 1.03, boxShadow: '0 0 24px rgba(100,56,194,0.18)' }} className="bg-[rgba(255,255,255,0.03)] p-6 rounded-2xl backdrop-blur-sm border border-white/30 transition-all duration-300">
-            <div className="flex items-center gap-4">
+          <motion.article variants={card} whileHover={{ scale: 1.03, boxShadow: '0 0 24px rgba(100,56,194,0.18)' }} className="bg-[rgba(255,255,255,0.03)] p-5 sm:p-6 rounded-2xl backdrop-blur-sm border border-white/30 transition-all duration-300">
+            <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 text-center sm:text-left">
               <div className="p-3 rounded-lg bg-[rgba(100,56,194,0.12)]">
                 <FiShield size={22} style={{ color: accent }} />
               </div>
               <div>
                 <h3 className="text-lg font-semibold">Sanitized & Inspected</h3>
-                <p className="text-gray-300 text-sm mt-1">Every vehicle is cleaned, sanitized and safety-checked between bookings.</p>
+                <p className="text-gray-300 text-sm sm:text-base mt-1">Every vehicle is cleaned, sanitized and safety-checked between bookings.</p>
               </div>
             </div>
           </motion.article>
@@ -213,3 +213,4 @@ const SlidersHorizontalL = useTransform(scrollYProgress, [0, 1], [ -50, 0]);
     </section>
   )
 }
+

@@ -59,7 +59,7 @@ const Signup = () => {
         <DarkVeil />
       </div>
       <div className="absolute top-6 left-6 text-white underline hover:text-purple-500">
-                <Button action={"Back"} href={"/"} />
+                <Button action={"Back"} href={" /"} />
       </div>
 
       <div className="container">

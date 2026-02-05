@@ -60,7 +60,7 @@ const FAQ = () => {
 
   return (
 
-    <div className="min-h-screen mx-auto    w-full bg-black pb-2 mt-[-20] relative overflow-hidden" id="FAQ">
+    <div className="min-h-screen mx-auto    w-full bg-black pb-2  relative " id="FAQ">
             <Aurora className="absolute inset-0 z-10 min-h-screen w-full"
   colorStops={["#6438c2", "#8b78c9", "#bfa1e2", "#616161", "#6438c2"]}
   blend={0.5}
