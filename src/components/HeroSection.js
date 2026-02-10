@@ -194,7 +194,7 @@ function HeroSection() {
             className="flex flex-col sm:flex-row gap-6"
           >
             <Link
-              href="#BrowseCarsPage"
+              href="/Fleet"
               // className="bg-[#6438c2] border-2 border-[#fbfbfb] hover:bg-[#451e98] transition text-white font-semibold px-10 py-4 rounded-full text-lg shadow-lg"
               
             ><Button action="Book Now" />

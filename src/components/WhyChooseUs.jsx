@@ -38,7 +38,7 @@ const { scrollYProgress } = useScroll({
   offset: ["0.5 1", "0.6 1"]
 });
 
-
+  
 const smoothProgress = useSpring(scrollYProgress, {
   stiffness: 80,
   damping: 20,
